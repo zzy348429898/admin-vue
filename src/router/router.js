@@ -6,9 +6,21 @@ import store from '../store/rootStore.js';
 Vue.use(Router);
 
 let router = new Router({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes: [{
+    path: '',
+    beforeRouteEnter(to, from, next) {
+      let userInfo = JSON.parse(localStorage.getItem('userInfo'));
+      if (userInfo.role.some((value) => value === 'admin')) {
+        next('/admin');
+      } else {
+        next('/login');
+      }
+    },
+    redirect: '/admin'
+  },
+  {
     path: '/login',
     name: 'login',
     component: Login
@@ -39,36 +51,3 @@ router.beforeEach((to, from, next) => {
   next();
 });
 export default router;
-
-export const asyncRouteMap = [{
-  path: '/admin',
-  name: 'admin',
-  meta: {
-    roles: ['admin']
-  },
-  component: () => import('../components/Admin')
-},
-{
-  path: '*',
-  name: '404',
-  meta: {
-    roles: ['admin', '']
-  },
-  component: () => import('../components/404.vue')
-}
-];
-
-let oneOBJ = {
-  needProxy: {}
-};
-
-let handler = {
-  get(target, key, receiver) {
-    console.log('get ', key);
-    return receiver[key];
-  },
-  set(target, key, value, receiver) {
-    console.log('set ', key, value);
-  }
-};
-let proxy = new Proxy(oneOBJ.needProxy, handler);
