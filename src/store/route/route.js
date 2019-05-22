@@ -20,7 +20,6 @@ export default {
   },
   actions: {
     addRoutes(context, role) {
-      console.log('addroutes', role);
       let roleRoute = context.getters.roleRoute;
       let newRoute = roleRoute(role);
       router.addRoutes(newRoute);

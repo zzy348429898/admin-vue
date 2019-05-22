@@ -31,13 +31,13 @@ let router = new Router({
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import('../components/Test.vue')
+    component: () => import('../components/test/Test.vue')
+  },
+  {
+    path: '/axiosTest',
+    name: 'axiosTest',
+    component: () => import('../components/test/axiosTest.vue')
   }
-    // {
-    //   path: '/admin',
-    //   name: 'admin',
-    //   component: () => import('./components/Admin')
-    // },
   ]
 });
 
