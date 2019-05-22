@@ -4,8 +4,8 @@
 
 <script>
 import echart from '../echart.vue';
-import axios from 'axios';
 import echarts from 'echarts';
+import axios from '../../tool/AxiosWithBasicURL.js';
 
 let option = {
   // backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{

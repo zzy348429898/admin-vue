@@ -4,7 +4,7 @@
 
 <script>
 import echart from '../echart.vue';
-import axios from 'axios';
+import axios from '../../tool/AxiosWithBasicURL.js';
 export default {
   name: 'lineChart',
   components: {
