@@ -1,6 +1,5 @@
 <script>
 import { Header, Icon, Breadcrumb, BreadcrumbItem, Tooltip } from 'element-ui';
-import { router } from 'vue-router';
 export default {
   name: 'admin-header',
   methods: {

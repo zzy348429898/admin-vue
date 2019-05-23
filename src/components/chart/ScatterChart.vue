@@ -113,7 +113,7 @@ export default {
   },
   methods: {
     getOption() {
-      axios.get('/api/scatterChartData.json').then(function (resp) {
+      axios.get('api/scatterChartData.json').then(function (resp) {
         this.option.series[0].data = resp.data[0];
         this.option.series[1].data = resp.data[1];
         this.option = { ...this.option };

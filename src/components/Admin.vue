@@ -34,9 +34,6 @@ export default {
 .sider {
   height: 100vh;
 }
-.main {
-  // background: #f5f5fa;
-}
 </style>
 <style lang="less">
 * {
