@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     getOption() {
-      axios.get('/api/barChartOption.json').then(function(resp) {
+      axios.get('api/barChartOption.json').then(function(resp) {
         this.option = resp.data;
       }.bind(this));
     }
