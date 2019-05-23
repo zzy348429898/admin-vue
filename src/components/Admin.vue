@@ -6,7 +6,7 @@
       <el-main class="main">
         <router-view></router-view>
       </el-main>
-      <el-footer>footer</el-footer>
+      <el-footer></el-footer>
     </el-container>
   </el-container>
 </template>

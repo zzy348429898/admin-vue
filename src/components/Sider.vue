@@ -15,7 +15,7 @@ export default {
     generateMenu() {
       let menuItems = this.$store.state.userInterface.sider.menuList.map((value, index) => {
         let getPath = (value) =>
-          this.$store.state.userInterface.sider.mapTitleToPath[value] ? this.$store.state.userInterface.sider.mapTitleToPath[value] : '/admin';
+          this.$store.state.userInterface.sider.mapTitleToPath[value] ? this.$store.state.userInterface.sider.mapTitleToPath[value] : 'admin';
         let getIcon = (value) =>
           this.$store.state.userInterface.sider.mapTitleToIcon[value] ? this.$store.state.userInterface.sider.mapTitleToIcon[value] : 'el-icon-s-home';
         let item;
@@ -28,14 +28,14 @@ export default {
               <span>{value.title}</span>
             </template>
             {value.sub.map((value, index) => (
-              <el-menu-item class="submenuItem" index={'/admin/' + getPath(value.title)}>
+              <el-menu-item class="submenuItem" index={'/admin/' + getPath(value.title)} disabled={this.$store.state.userInterface.sider.mapTitleToPath[value.title] === undefined}>
                 <i class={getIcon(value.title)}></i>
                 <span slot={'title'}>{value.title}</span>
               </el-menu-item>
             ))}
           </el-submenu>;
         } else { // 没有子菜单
-          item = <el-menu-item index={'/admin/' + getPath(value.title)}>
+          item = <el-menu-item index={'/admin/' + getPath(value.title)} disabled={this.$store.state.userInterface.sider.mapTitleToPath[value.title] === undefined}>
             <i class={getIcon(value.title)}></i>
             <span slot="title">{value.title}</span>
           </el-menu-item>;
@@ -84,9 +84,9 @@ export default {
   }
   border: 0px;
   & .submenuItem {
-    background-color: #7171c6!important;
+    background-color: #7171c6 !important;
     &:hover {
-          background-color: #473c8b!important;
+      background-color: #473c8b !important;
     }
   }
   & i {

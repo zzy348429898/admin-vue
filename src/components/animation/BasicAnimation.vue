@@ -138,19 +138,21 @@ export default {
   display: flex;
   flex-wrap: wrap;
   .item {
-    min-width: 200px;
+    min-width: 220px;
     min-height: 65px;
     margin: 20px;
     // background-color: #5c759b1a;
     cursor: pointer;
     .tag {
       display: inline-block;
+      width: 200px;
       padding: 8px;
+      background-color: rgba(103, 194, 58, 0.1);
       border: rgba(103, 194, 58, 0.2) 1px solid;
       border-radius: 8px;
-      font-size: 2em;
-      background-color: rgba(103, 194, 58, 0.1);
       color: #67c23a;
+      text-align: center;
+      font-size: 1.8em;
     }
   }
 }

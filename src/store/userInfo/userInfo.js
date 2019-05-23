@@ -7,6 +7,9 @@ export default {
   mutations: {
     updateUserInfo(state, newUserInfo) {
       state.role = newUserInfo.role;
+    },
+    clearUserInfo(state) {
+      state.role = '';
     }
   },
   actions: {
@@ -16,6 +19,10 @@ export default {
         root: true
       });
       localStorage.setItem('userInfo', JSON.stringify(newUserInfo));
+    },
+    clearUserInfo(context) {
+      context.commit('clearUserInfo');
+      localStorage.removeItem('userInfo');
     }
   }
 

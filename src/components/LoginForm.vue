@@ -11,7 +11,7 @@
       <el-input v-model="form.name" placeholder="请输入账号"></el-input>
     </el-form-item>
     <el-form-item label="密码" prop="password">
-      <el-input v-model="form.password" placeholder="请输入密码"></el-input>
+      <el-input v-model="form.password"  type="password" placeholder="请输入密码"></el-input>
     </el-form-item>
     <el-form-item>
       <el-checkbox :checked="form.remenber" label="记住" prop="remenber"></el-checkbox>
@@ -47,8 +47,8 @@ export default {
     };
     return {
       form: {
-        name: '',
-        password: '',
+        name: 'admin',
+        password: 'admin',
         remenber: true
       },
       rules: {
