@@ -4,7 +4,8 @@ export default {
   // functional: true,
   props: ['a'],
   render(h, context) {
-    console.log(this);
+    console.log('this', this);
+    console.log(context);
     return <div >test1</div>;
   }
 };

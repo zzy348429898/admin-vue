@@ -9,6 +9,7 @@ Vue.use(Main);
 Vue.use(Footer);
 export default {
   name: 'test',
+  // functional: true,
   components: {
     'test1': Text1
   },
@@ -20,10 +21,11 @@ export default {
         <el-main>main</el-main>
         <el-footer>footer</el-footer>
       </el-container>
-      <test1 a='1'
+      <test1
+        a='1'
         b='b'
-        // nativeOnClick={() => console.log('nativeonclick')}
-        // onClick={() => console.log('onclick')}        
+        nativeOnClick={() => console.log('nativeonclick')}
+        onClick={() => console.log('onclick')}        
       ></test1>
     </el-container>;
   }
